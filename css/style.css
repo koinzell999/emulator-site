@@ -32,6 +32,23 @@
 .pixel-nav .navbar-brand {
   font-size: 2rem;
   padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  font-size: 3em;
+  line-height: 1;
+}
+
+.brand-text {
+  background: linear-gradient(to right, #ff0000, #ff8800, #ffff00, #00cc00, #0088ff, #8800ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #ffd700;
+  paint-order: stroke fill;
 }
 
 .pixel-nav .navbar-nav {
