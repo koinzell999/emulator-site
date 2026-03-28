@@ -1,3 +1,11 @@
+/* Accessibility-tuned palette for better readability on dark/image backgrounds */
+:root {
+  --ui-text-high: #f7fcff;
+  --ui-text-med: #e6f3ff;
+  --ui-accent: #7ef4ff;
+  --ui-focus: #9efcff;
+}
+
 /* Bigger navbar */
 .pixel-nav {
   background-color: #1b1b2f;
@@ -46,7 +54,7 @@
 
 /* Hover effect for links */
 .pixel-nav .nav-link {
-  color: #f1faee;
+  color: var(--ui-text-high);
   transition: all 0.3s ease;
   padding: 0.8rem 1.2rem;
 }
@@ -59,8 +67,11 @@
 
 /* Active link styling */
 .pixel-nav .nav-link.active {
-  color: #4cc9f0;
+  color: var(--ui-accent);
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 /* Cascade effect on smaller screens */
@@ -81,8 +92,9 @@
 }
 
 .carousel-item p {
-  font-size: 0.8rem;
-  color: #f1faee;
+  font-size: 0.9rem;
+  color: var(--ui-text-high);
+  line-height: 1.55;
 }
 
 /* Retro carousel controls */
@@ -161,7 +173,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
 }
 
@@ -193,16 +205,27 @@
   background: url("../images/blue-background-in-pixel-art-style-vector.webp") center/cover no-repeat;
   background-size: cover;
   border: 2px solid #1a3b70;
-  filter: brightness(0.72) contrast(0.9) saturate(0.85);
+  filter: none;
   position: relative;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
 }
 
 .highlight-carousel .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.2);
   z-index: 0;
+}
+
+.highlight-carousel .card h3 {
+  color: var(--ui-text-high);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.highlight-carousel .card p {
+  color: var(--ui-text-high);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .highlight-carousel .card > * {
@@ -213,8 +236,13 @@
 .carousel-hint {
   font-size: 0.62rem;
   letter-spacing: 0.08rem;
-  color: #a8d8ff;
+  color: var(--ui-text-high);
   text-shadow: 0 0 8px rgba(76, 201, 240, 0.55);
+}
+
+.pixel-card-section .text-warning {
+  color: var(--ui-text-high) !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
 @keyframes scanlines {
@@ -234,21 +262,31 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  color: #f1faee;
+  color: var(--ui-text-high);
 }
 
 .pixel-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(27,27,47,0.6); /* semi-transparent overlay */
+  background: rgba(27,27,47,0.45); /* semi-transparent overlay */
 }
 
-..pixel-hero h1,
+.pixel-hero h1,
 .pixel-hero p,
 .pixel-hero a {
   position: relative;
   z-index: 1;
+}
+
+.pixel-hero h1,
+.pixel-hero p {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.pixel-hero .text-warning {
+  color: var(--ui-text-high) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
 .pixel-btn {
@@ -262,18 +300,21 @@
   border: 0;
   background: transparent;
   border-radius: 0;
-  color: #ffe66d;
+  color: var(--ui-text-high);
   text-decoration: none;
   font-size: 0.66rem;
   line-height: 1.4;
-  text-shadow: 2px 2px 0 #10213f;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .highlight-carousel .card .retro-text-link:hover,
 .highlight-carousel .card .retro-text-link:focus,
 .highlight-carousel .card .retro-text-link:active {
-  color: #9efcff;
-  text-shadow: 0 0 8px rgba(158, 252, 255, 0.85), 2px 2px 0 #10213f;
+  color: var(--ui-accent);
+  text-shadow: 0 0 10px rgba(126, 244, 255, 0.95);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
   transform: translateY(-1px);
   background: transparent;
   box-shadow: none;
@@ -283,6 +324,22 @@
   transform: scale(1.05);
   box-shadow: 0 0 10px #ffd166;
 }
+
+.hero-mail-link {
+  color: var(--ui-text-high) !important;
+  border: 2px solid var(--ui-accent);
+  background: rgba(17, 34, 64, 0.7);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.hero-mail-link:hover,
+.hero-mail-link:focus {
+  color: #0b1d30 !important;
+  background: var(--ui-accent);
+  border-color: var(--ui-accent);
+  box-shadow: 0 0 14px rgba(126, 244, 255, 0.65);
+}
+
 .pixel-hero {
   min-height: 60vh; /* 60% of viewport height */
 }
@@ -307,7 +364,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* overlay for readability */
+  background: rgba(0,0,0,0.24); /* lighter overlay keeps text readable without dimming too much */
 }
 
 .pixel-card-section .container {
@@ -319,7 +376,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* overlay for readability */
+  background: rgba(0,0,0,0.24); /* lighter overlay keeps text readable without dimming too much */
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 2px;
 }
 .pixel-card-section .container {
   position: relative;
