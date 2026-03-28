@@ -1,0 +1,114 @@
+/* Bigger navbar */
+.pixel-nav {
+  background-color: #1b1b2f;
+  border-bottom: 4px solid #ff4c4c;
+  font-size: 1.1rem;
+}
+
+/* Hover effect for links */
+.pixel-nav .nav-link {
+  color: #f1faee;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.2rem;
+}
+
+.pixel-nav .nav-link:hover {
+  color: #ffd166; /* warm yellow highlight */
+  background-color: #22223b;
+  border-radius: 6px;
+}
+
+/* Active link styling */
+.pixel-nav .nav-link.active {
+  color: #4cc9f0;
+  font-weight: bold;
+}
+
+/* Cascade effect on smaller screens */
+@media (max-width: 991px) {
+  .pixel-nav .nav-link {
+    display: block;
+    margin: 0.3rem 0;
+    border-bottom: 2px solid #333;
+  }
+  .pixel-nav .nav-link:hover {
+    background-color: #333;
+    color: #ff4c4c;
+  }
+}
+/* Carousel text */
+.carousel-item h3 {
+  font-size: 1.2rem;
+}
+
+.carousel-item p {
+  font-size: 0.8rem;
+  color: #f1faee;
+}
+
+/* Carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.pixel-hero {
+  background: url("../images/background.png") center/cover no-repeat;
+  min-height: 100vh;        /* full viewport height */
+  display: flex;            /* center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #f1faee;
+}
+
+.pixel-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(27,27,47,0.6); /* semi-transparent overlay */
+}
+
+.pixel-hero h1,
+.pixel-hero p,
+.pixel-hero a {
+  position: relative;
+  z-index: 1;
+}
+
+.pixel-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffd166;
+}
+.pixel-hero {
+  min-height: 60vh; /* 60% of viewport height */
+}
+
+/* Pixel art background for card section */
+.pixel-card-section {
+  background: url("../images/top bg.png") center/cover repeat;
+  padding: 3rem 1rem;
+  border-top: 4px solid #ff4c4c;
+  border-bottom: 4px solid #ffd166;
+}
+
+.pixel-card-section {
+  background: url("../images/topbg.webp") center/cover repeat;
+  width: 100%;          /* full width */
+  min-height: 50vh;    /* full viewport height */
+  padding: 3rem 0;
+  position: relative;
+}
+
+.pixel-card-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* overlay for readability */
+}
+
+.pixel-card-section .container {
+  position: relative;
+  z-index: 1;
+}
