@@ -1,0 +1,401 @@
+/* Bigger navbar */
+.pixel-nav {
+  background-color: #1b1b2f;
+  border-bottom: 4px solid #ff4c4c;
+  font-size: 1.1rem;
+  min-height: 20vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pixel-nav .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pixel-nav .navbar-brand,
+.pixel-nav .navbar-toggler {
+  margin-bottom: 0;
+}
+
+.pixel-nav .navbar-brand {
+  font-size: 2rem;
+  padding-right: 1.5rem;
+}
+
+.pixel-nav .navbar-nav {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pixel-nav .nav-link {
+  font-size: 1.3rem;
+  padding: 1rem 1.5rem;
+  min-width: 12%;
+  text-align: center;
+}
+
+.pixel-nav .navbar-nav .nav-item {
+  flex: 1;
+}
+
+/* Hover effect for links */
+.pixel-nav .nav-link {
+  color: #f1faee;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.2rem;
+}
+
+.pixel-nav .nav-link:hover {
+  color: #1b1b2f; /* dark text for contrast */
+  background-color: rgba(135, 206, 250, 0.7); /* sky blue, lighter */
+  border-radius: 6px;
+}
+
+/* Active link styling */
+.pixel-nav .nav-link.active {
+  color: #4cc9f0;
+  font-weight: bold;
+}
+
+/* Cascade effect on smaller screens */
+@media (max-width: 991px) {
+  .pixel-nav .nav-link {
+    display: block;
+    margin: 0.3rem 0;
+    border-bottom: 2px solid #333;
+  }
+  .pixel-nav .nav-link:hover {
+    background-color: #333;
+    color: #ff4c4c;
+  }
+}
+/* Carousel text */
+.carousel-item h3 {
+  font-size: 1.2rem;
+}
+
+.carousel-item p {
+  font-size: 0.8rem;
+  color: #f1faee;
+}
+
+/* Retro carousel controls */
+.pixel-card-section .container {
+  position: relative;
+}
+
+.highlight-carousel .carousel-inner {
+  padding-left: 5.5rem;
+  padding-right: 5.5rem;
+}
+
+.highlight-carousel .carousel-control-prev,
+.highlight-carousel .carousel-control-next {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%);
+  opacity: 1;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-carousel .carousel-control-prev {
+  left: -2.25rem !important;
+  right: auto !important;
+}
+
+.highlight-carousel .carousel-control-next {
+  right: -2.25rem !important;
+  left: auto !important;
+}
+
+.highlight-carousel .retro-arrow {
+  background-image: none;
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #ffe066;
+  background: #112240;
+  border: 4px solid #ff4c4c;
+  box-shadow: 0 0 0 3px #1b1b2f, 0 0 12px rgba(255, 224, 102, 0.45);
+}
+
+.pixel-card-section,
+.pixel-card-section .container,
+.highlight-carousel {
+  overflow: visible;
+}
+
+.highlight-carousel .carousel-control-prev:hover .retro-arrow,
+.highlight-carousel .carousel-control-next:hover .retro-arrow,
+.highlight-carousel .carousel-control-prev:focus .retro-arrow,
+.highlight-carousel .carousel-control-next:focus .retro-arrow {
+  color: #1b1b2f;
+  background: #ffe066;
+  border-color: #4cc9f0;
+}
+
+.highlight-carousel {
+  position: relative;
+  background: url("../images/top bg.png") center/cover no-repeat;
+  background-size: cover;
+}
+
+.highlight-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.highlight-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.2;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.06) 0,
+    rgba(255, 255, 255, 0.06) 2px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 6px
+  );
+  animation: scanlines 2.8s linear infinite;
+}
+
+.highlight-carousel .carousel-inner,
+.highlight-carousel .carousel-item,
+.highlight-carousel .card {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-carousel .card {
+  background: url("../images/blue-background-in-pixel-art-style-vector.webp") center/cover no-repeat;
+  background-size: cover;
+  border: 2px solid #1a3b70;
+  filter: brightness(0.72) contrast(0.9) saturate(0.85);
+  position: relative;
+}
+
+.highlight-carousel .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+.highlight-carousel .card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-hint {
+  font-size: 0.62rem;
+  letter-spacing: 0.08rem;
+  color: #a8d8ff;
+  text-shadow: 0 0 8px rgba(76, 201, 240, 0.55);
+}
+
+@keyframes scanlines {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 16px;
+  }
+}
+
+.pixel-hero {
+  background: url("../images/background.png") center/cover no-repeat;
+  min-height: 100vh;        /* full viewport height */
+  display: flex;            /* center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #f1faee;
+}
+
+.pixel-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(27,27,47,0.6); /* semi-transparent overlay */
+}
+
+..pixel-hero h1,
+.pixel-hero p,
+.pixel-hero a {
+  position: relative;
+  z-index: 1;
+}
+
+.pixel-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.highlight-carousel .card .retro-text-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  color: #ffe66d;
+  text-decoration: none;
+  font-size: 0.66rem;
+  line-height: 1.4;
+  text-shadow: 2px 2px 0 #10213f;
+}
+
+.highlight-carousel .card .retro-text-link:hover,
+.highlight-carousel .card .retro-text-link:focus,
+.highlight-carousel .card .retro-text-link:active {
+  color: #9efcff;
+  text-shadow: 0 0 8px rgba(158, 252, 255, 0.85), 2px 2px 0 #10213f;
+  transform: translateY(-1px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.pixel-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffd166;
+}
+.pixel-hero {
+  min-height: 60vh; /* 60% of viewport height */
+}
+
+/* Pixel art background for card section */
+.pixel-card-section {
+  background: url("../images/top bg.png") center/cover repeat;
+  padding: 3rem 1rem;
+  border-top: 4px solid #ff4c4c;
+  border-bottom: 4px solid #ffd166;
+}
+
+.pixel-card-section {
+  background: url("../images/top bg.png") center/cover no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.pixel-card-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* overlay for readability */
+}
+
+.pixel-card-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.pixel-card-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* overlay for readability */
+}
+.pixel-card-section .container {
+  position: relative;
+  z-index: 1;
+}
+.emulator-icon {
+  width: 80px;
+}
+
+.custom-width {
+  width: 90vw;   /* 90% of viewport width */
+  margin: 0 auto; /* center it */
+}
+
+@media (max-width: 992px) {
+  .highlight-carousel .carousel-inner {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+  .highlight-carousel .carousel-control-prev,
+  .highlight-carousel .carousel-control-next {
+    width: 56px;
+    height: 56px;
+  }
+
+  .highlight-carousel .carousel-control-prev {
+    left: -1.5rem !important;
+  }
+
+  .highlight-carousel .carousel-control-next {
+    right: -1.5rem !important;
+  }
+
+  .highlight-carousel .retro-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight-carousel .carousel-inner {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+  }
+
+  .highlight-carousel .carousel-control-prev {
+    left: -0.8rem !important;
+  }
+
+  .highlight-carousel .carousel-control-next {
+    right: -0.8rem !important;
+  }
+
+  .highlight-carousel .carousel-control-prev,
+  .highlight-carousel .carousel-control-next {
+    width: 48px;
+    height: 48px;
+  }
+
+  .highlight-carousel .retro-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+    border-width: 3px;
+  }
+
+  .carousel-hint {
+    font-size: 0.5rem;
+    letter-spacing: 0.04rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight-carousel::after {
+    animation: none;
+  }
+}
